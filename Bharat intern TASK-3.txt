@@ -1,0 +1,13 @@
+!pip install googletrans==4.0.0-rc1
+from googletrans import Translator
+
+def translate_english_to_telugu(text):
+    translator = Translator(service_urls=['translate.google.com'])
+    translation = translator.translate(text, src='en', dest='te')
+    return translation.text
+
+# Example usage:
+while True:
+    english_text = input('Enter your English text below to convert it into Telugu: ')
+    telugu_translation = translate_english_to_telugu(english_text)
+    print(telugu_translation)
